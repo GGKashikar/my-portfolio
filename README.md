@@ -40,8 +40,7 @@ This portfolio showcases my:
 - Google IT Support Professional Certificate
 
 ## 🌐 Live Portfolio
-
-Will be added Shortly
+https://ggkashikar.github.io/my-portfolio/
 
 ## 📫 Connect With Me
 

@@ -1,2 +1,54 @@
-# my-portfolio
-Personal portfolio website showcasing my skills, projects, certifications, and journey as an aspiring DevOps Engineer.
+# 👋 Hi, I'm Gaurav Kashikar
+
+## Cloud & DevOps Enthusiast
+
+Welcome to my personal portfolio website repository.
+
+This portfolio showcases my:
+
+- Technical Skills
+- Projects
+- Certifications
+- Professional Experience
+- Education
+- Contact Information
+
+## 🚀 Technologies Used
+
+- HTML5
+- CSS3
+- JavaScript
+- Responsive Design
+
+## ☁️ Areas of Interest
+
+- AWS Cloud
+- Docker
+- Kubernetes
+- Terraform
+- Jenkins
+- CI/CD Pipelines
+- Linux Administration
+- OpenShift
+
+## 📜 Certifications
+
+- Aspire Leaders Program (Harvard Leadership Initiative)
+- Google AI Essentials
+- Learning Docker
+- Tools of the Trade: Linux & SQL
+- Google IT Support Professional Certificate
+
+## 🌐 Live Portfolio
+
+[Visit Portfolio](https://yourusername.github.io)
+
+## 📫 Connect With Me
+
+- LinkedIn: https://linkedin.com/in/gaurav-kashikar
+- GitHub: https://github.com/GKGashikar
+- Email: gauravkashikar25@gmail.com
+
+---
+
+Learning Today. Building Tomorrow. Impacting Forever.

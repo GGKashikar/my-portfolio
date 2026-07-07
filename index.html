@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaurav G. Kashikar | Associate IT Consultant</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- ── NAVBAR ── -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-logo">GK</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme" title="Toggle light/dark mode">
+        <i class="fas fa-moon" id="theme-icon"></i>
+      </button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-text">
+        <p class="hero-greeting">Hi there, I'm</p>
+        <h1 class="hero-name">Gaurav G. Kashikar</h1>
+        <div class="hero-role">
+          <span class="role-prefix">I'm a </span>
+          <span class="role-typed" id="typed-role"></span>
+          <span class="cursor">|</span>
+        </div>
+        <p class="hero-location"><i class="fas fa-map-marker-alt"></i> Chhatrapati Sambhajinagar, India</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-primary">Get In Touch</a>
+          <a href="#projects" class="btn btn-outline">View Projects</a>
+        </div>
+        <div class="hero-socials">
+          <a href="mailto:gauravkashikar25@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+          <a href="https://github.com/GGKashikar" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://www.linkedin.com/in/gaurav-kashikar/" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-ring">
+          <div class="hero-avatar" id="hero-avatar">
+            <!-- Shows photo if profile.jpg exists, otherwise shows initials -->
+            <img src="my-pic.png" alt="Gaurav G. Kashikar" class="hero-photo" id="hero-photo"
+              onerror="this.style.display='none';document.getElementById('avatar-initials').style.display='flex';" />
+            <div class="avatar-initials" id="avatar-initials" style="display:none;">GK</div>
+          </div>
+          <div class="avatar-badge badge-1"><i class="fab fa-aws"></i></div>
+          <div class="avatar-badge badge-2"><i class="fab fa-docker"></i></div>
+          <div class="avatar-badge badge-3"><i class="fas fa-dharmachakra"></i></div>
+        </div>
+      </div>
+    </div>
+    <a href="#about" class="scroll-down" aria-label="Scroll down">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <!-- ── ABOUT ── -->
+  <section class="section" id="about">
+    <div class="container">
+      <h2 class="section-title">About <span>Me</span></h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            MCA post-graduate with a keen interest in Cloud, DevOps, and next-generation technologies.
+            Currently employed as an <strong>Associate IT Consultant at Maha Infotech Pvt. Ltd.</strong>,
+            where I support IT project execution and technical documentation.
+          </p>
+          <p>
+            Alongside my role, I am pursuing advanced learning in Cloud and DevOps and experiment
+            with emerging technologies like AI to integrate intelligent solutions into real-world IT projects.
+          </p>
+          <div class="about-tags">
+            <span>☁️ Cloud Enthusiast</span>
+            <span>🐳 Container Wizard</span>
+            <span>⚙️ CI/CD Advocate</span>
+            <span>🤖 AI Explorer</span>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-num" data-target="2">0</span>+
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="5">0</span>+
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="5">0</span>+
+            <span class="stat-label">Certifications</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-num" data-target="3">0</span>
+            <span class="stat-label">Languages Spoken</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ── -->
+  <section class="section section-alt" id="skills">
+    <div class="container">
+      <h2 class="section-title">Technical <span>Skills</span></h2>
+      <div class="skills-grid">
+
+        <div class="skill-card" data-aos>
+          <div class="skill-icon"><i class="fab fa-aws"></i></div>
+          <h3>Cloud (AWS)</h3>
+          <div class="skill-tags">
+            <span>EC2</span><span>S3</span><span>Auto Scaling</span>
+            <span>Load Balancer</span><span>CloudWatch</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-aos>
+          <div class="skill-icon"><i class="fab fa-docker"></i></div>
+          <h3>Containerization</h3>
+          <div class="skill-tags">
+            <span>Docker</span><span>Podman</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-aos>
+          <div class="skill-icon"><i class="fas fa-dharmachakra"></i></div>
+          <h3>Orchestration</h3>
+          <div class="skill-tags">
+            <span>Kubernetes</span><span>RedHat OpenShift</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-aos>
+          <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+          <h3>Infrastructure as Code</h3>
+          <div class="skill-tags">
+            <span>Terraform</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-aos>
+          <div class="skill-icon"><i class="fas fa-infinity"></i></div>
+          <h3>CI/CD</h3>
+          <div class="skill-tags">
+            <span>GitHub Actions</span><span>Jenkins</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-aos>
+          <div class="skill-icon"><i class="fab fa-linux"></i></div>
+          <h3>Operating Systems</h3>
+          <div class="skill-tags">
+            <span>RHEL</span><span>Ubuntu</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-aos>
+          <div class="skill-icon"><i class="fab fa-python"></i></div>
+          <h3>Programming & Scripting</h3>
+          <div class="skill-tags">
+            <span>Python</span><span>Shell Scripting</span>
+          </div>
+        </div>
+
+        <div class="skill-card" data-aos>
+          <div class="skill-icon"><i class="fas fa-globe"></i></div>
+          <h3>Web Technologies</h3>
+          <div class="skill-tags">
+            <span>HTML</span><span>CSS</span><span>JavaScript</span><span>PostgreSQL</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ── -->
+  <section class="section" id="experience">
+    <div class="container">
+      <h2 class="section-title">Professional <span>Experience</span></h2>
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Associate IT Consultant</h3>
+              <span class="timeline-badge current">Current</span>
+            </div>
+            <p class="timeline-company"><i class="fas fa-building"></i> Maha Infotech Pvt. Ltd.</p>
+            <p class="timeline-date"><i class="fas fa-calendar-alt"></i> Oct 2025 – Present</p>
+            <p class="timeline-desc">
+              Working on IT projects for Chh. Sambhajinagar Smart City. Supporting project execution through
+              technical documentation, IT infrastructure troubleshooting, and integration of digital solutions
+              for civic modernization.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>IT Trainee</h3>
+            </div>
+            <p class="timeline-company"><i class="fas fa-building"></i> Chowgule Lavgan Shiprepair Pvt. Ltd.</p>
+            <p class="timeline-date"><i class="fas fa-calendar-alt"></i> Apr 2025 – Oct 2025</p>
+            <p class="timeline-desc">
+              Provided technical support for software-related issues within the organization. Performed system
+              administration tasks and troubleshooting to resolve technical issues efficiently.
+            </p>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-header">
+              <h3>Software Development Intern</h3>
+            </div>
+            <p class="timeline-company"><i class="fas fa-building"></i> Expert GlobalSolutions Pvt. Ltd.</p>
+            <p class="timeline-date"><i class="fas fa-calendar-alt"></i> Jan 2024 – May 2024</p>
+            <p class="timeline-desc">
+              Collaborated with a team of interns to develop a learning platform for company employees using
+              HTML, CSS, JavaScript, and PostgreSQL. Gained valuable experience in teamwork and communication.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── PROJECTS ── -->
+  <section class="section section-alt" id="projects">
+    <div class="container">
+      <h2 class="section-title">My <span>Projects</span></h2>
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="project-icon"><i class="fab fa-github"></i></div>
+          <h3>Secure GitHub Integration</h3>
+          <p>Used a local Git repository to securely push code into GitHub using PAT (Personal Access Token), ensuring secure version control workflows.</p>
+          <div class="project-tags"><span>Git</span><span>GitHub</span><span>PAT</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon"><i class="fab fa-docker"></i></div>
+          <h3>Containerized Website with MySQL</h3>
+          <p>Deployed a website inside a Docker container and integrated a MySQL database, demonstrating containerized full-stack application deployment.</p>
+          <div class="project-tags"><span>Docker</span><span>MySQL</span><span>Web</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon"><i class="fab fa-aws"></i></div>
+          <h3>AWS Load Balancer & Auto Scaling</h3>
+          <p>Managed load distribution across multiple AWS EC2 instances using a Load Balancer and Auto Scaling Groups for high availability.</p>
+          <div class="project-tags"><span>AWS</span><span>EC2</span><span>Load Balancer</span><span>Auto Scaling</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Docker Orchestration with Terraform</h3>
+          <p>Orchestrated Docker containers using Terraform, applying Infrastructure as Code principles to automate container lifecycle management.</p>
+          <div class="project-tags"><span>Terraform</span><span>Docker</span><span>IaC</span></div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-icon"><i class="fas fa-dharmachakra"></i></div>
+          <h3>WordPress & MySQL on Kubernetes</h3>
+          <p>Orchestrated a full WordPress and MySQL deployment on Kubernetes, managing persistent volumes, services, and deployments end-to-end.</p>
+          <div class="project-tags"><span>Kubernetes</span><span>WordPress</span><span>MySQL</span></div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EDUCATION ── -->
+  <section class="section" id="education">
+    <div class="container">
+      <h2 class="section-title">My <span>Education</span></h2>
+      <div class="edu-grid">
+
+        <div class="edu-card">
+          <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="edu-info">
+            <h3>Master of Computer Applications (MCA)</h3>
+            <p class="edu-institution">Government College of Engineering, Chh. Sambhajinagar</p>
+            <p class="edu-meta">
+              <span><i class="fas fa-calendar-alt"></i> 2022 – 2024</span>
+              <span><i class="fas fa-star"></i> CGPA: 6.79</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="edu-card">
+          <div class="edu-icon"><i class="fas fa-university"></i></div>
+          <div class="edu-info">
+            <h3>Bachelor of Commerce (B.Com)</h3>
+            <p class="edu-institution">Dr. Babasaheb Ambedkar Marathwada University, Chh. Sambhajinagar</p>
+            <p class="edu-meta">
+              <span><i class="fas fa-calendar-alt"></i> 2018 – 2021</span>
+              <span><i class="fas fa-star"></i> CGPA: 7.35</span>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CERTIFICATIONS ── -->
+  <section class="section section-alt" id="certifications">
+    <div class="container">
+      <h2 class="section-title">My <span>Certifications</span></h2>
+      <div class="cert-grid">
+
+        <div class="cert-card">
+          <div class="cert-logo cert-aspire"><i class="fas fa-award"></i></div>
+          <h3>Aspire Leaders Program</h3>
+          <p>Harvard Leadership Initiative</p>
+          <span class="cert-year">2025</span>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-logo cert-google"><i class="fab fa-google"></i></div>
+          <h3>Google AI Essentials</h3>
+          <p>Google</p>
+          <span class="cert-year">2024</span>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-logo cert-docker"><i class="fab fa-docker"></i></div>
+          <h3>Learning Docker</h3>
+          <p>LinkedIn Learning</p>
+          <span class="cert-year">2024</span>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-logo cert-google"><i class="fab fa-google"></i></div>
+          <h3>Tools of the Trade: Linux &amp; SQL</h3>
+          <p>Google</p>
+          <span class="cert-year">2023</span>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-logo cert-google"><i class="fab fa-google"></i></div>
+          <h3>Google IT Support Professional Certificate</h3>
+          <p>Google</p>
+          <span class="cert-year">2023</span>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In <span>Touch</span></h2>
+      <p class="contact-sub">I'm open to new opportunities, collaborations, and conversations. Feel free to reach out!</p>
+      <div class="contact-grid">
+
+        <div class="contact-info">
+          <a href="mailto:gauravkashikar25@gmail.com" class="contact-item">
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <p class="contact-label">Email</p>
+              <p class="contact-value">gauravkashikar25@gmail.com</p>
+            </div>
+          </a>
+          <a href="tel:+919657819037" class="contact-item">
+            <div class="contact-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <p class="contact-label">Phone</p>
+              <p class="contact-value">+91 9657819037</p>
+            </div>
+          </a>
+          <a href="https://www.linkedin.com/in/gaurav-kashikar/" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon"><i class="fab fa-linkedin"></i></div>
+            <div>
+              <p class="contact-label">LinkedIn</p>
+              <p class="contact-value">linkedin.com/in/gaurav-kashikar</p>
+            </div>
+          </a>
+          <a href="https://github.com/GGKashikar" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-icon"><i class="fab fa-github"></i></div>
+            <div>
+              <p class="contact-label">GitHub</p>
+              <p class="contact-value">github.com/GGKashikar</p>
+            </div>
+          </a>
+          <div class="contact-item no-link">
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <p class="contact-label">Location</p>
+              <p class="contact-value">Chhatrapati Sambhajinagar, India</p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="John Doe" required />
+          </div>
+          <div class="form-group">
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="john@example.com" required />
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" placeholder="Let's collaborate..." required />
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" placeholder="Your message here..." required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <i class="fas fa-paper-plane"></i> Send Message
+          </button>
+          <p class="form-note" id="form-status"></p>
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer class="footer">
+    <p>Designed & Built by <strong>Gaurav G. Kashikar</strong></p>
+    <p>© <span id="year"></span> All rights reserved.</p>
+  </footer>
+
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fas fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>

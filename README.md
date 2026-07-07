@@ -41,7 +41,7 @@ This portfolio showcases my:
 
 ## 🌐 Live Portfolio
 
-[Visit Portfolio](https://yourusername.github.io)
+Will be added Shortly
 
 ## 📫 Connect With Me
 
@@ -52,3 +52,6 @@ This portfolio showcases my:
 ---
 
 Learning Today. Building Tomorrow. Impacting Forever.
+
+Last updated: July 2026
+

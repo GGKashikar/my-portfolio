@@ -23,6 +23,32 @@ themeToggle.addEventListener('click', () => {
   applyTheme(html.getAttribute('data-theme') === 'dark' ? 'light' : 'dark');
 });
 
+const cvdToggle = document.getElementById('cvd-toggle');
+const cvdModes = [
+  { id: 'off', label: 'Color-blind friendly mode: Off' },
+  { id: 'friendly', label: 'Color-blind friendly palette (high contrast)' },
+  { id: 'deuteranopia', label: 'Deuteranopia palette (green-weak)' },
+  { id: 'protanopia', label: 'Protanopia palette (red-weak)' },
+  { id: 'tritanopia', label: 'Tritanopia palette (blue-yellow)' }
+];
+
+function applyCvd(modeId) {
+  const mode = cvdModes.find(m => m.id === modeId) || cvdModes[0];
+  if (mode.id === 'off') html.removeAttribute('data-cvd');
+  else html.setAttribute('data-cvd', mode.id);
+  localStorage.setItem('cvd', mode.id);
+  if (cvdToggle) cvdToggle.title = mode.label;
+}
+
+applyCvd(localStorage.getItem('cvd') || 'off');
+if (cvdToggle) {
+  cvdToggle.addEventListener('click', () => {
+    const current = html.getAttribute('data-cvd') || 'off';
+    const next = cvdModes[(cvdModes.findIndex(m => m.id === current) + 1) % cvdModes.length];
+    applyCvd(next.id);
+  });
+}
+
 // ── NAVBAR SCROLL + ACTIVE LINK ──
 const navbar = document.getElementById('navbar');
 const navLinks = document.querySelectorAll('.nav-links a');
@@ -64,6 +90,9 @@ function updatePrefix() {
 }
 
 updatePrefix();
+typedEl.textContent = roles[0];
+ci = roles[0].length;
+del = true;
 
 function typeRole() {
   const cur = roles[ri];
@@ -76,23 +105,36 @@ function typeRole() {
   }
   setTimeout(typeRole, del ? 55 : 95);
 }
-typeRole();
+setTimeout(typeRole, 1800);
 
 // ── COUNTER ANIMATION ──
 function animateCounter(el) {
-  const target = parseInt(el.getAttribute('data-target'));
+  const target = parseInt(el.getAttribute('data-target'), 10);
+  if (!target) return;
+  if (parseInt(el.textContent, 10) === target) return;
   let count = 0;
-  const step = Math.ceil(target / 40);
+  const step = Math.max(1, Math.ceil(target / 40));
   const t = setInterval(() => {
     count = Math.min(count + step, target);
     el.textContent = count;
     if (count === target) clearInterval(t);
   }, 40);
 }
+const statEls = document.querySelectorAll('.stat-num');
 const cObs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { animateCounter(e.target); cObs.unobserve(e.target); } });
-}, { threshold: 0.5 });
-document.querySelectorAll('.stat-num').forEach(el => cObs.observe(el));
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateCounter(e.target);
+      cObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+statEls.forEach(el => cObs.observe(el));
+setTimeout(() => {
+  statEls.forEach(el => {
+    if (el.textContent === '0') el.textContent = el.getAttribute('data-target') || '0';
+  });
+}, 2000);
 
 // ── SKILL CARD STAGGER REVEAL ──
 const skObs = new IntersectionObserver(entries => {
@@ -140,6 +182,14 @@ document.getElementById('contact-form').addEventListener('submit', function(e) {
     message:    document.getElementById('message').value,
     to_email:   'gauravkashikar25@gmail.com'
   };
+
+  if (typeof emailjs === 'undefined' || !emailjs.send) {
+    const body = encodeURIComponent(params.message + '\n\nFrom: ' + params.from_name + ' <' + params.from_email + '>');
+    window.location.href = 'mailto:gauravkashikar25@gmail.com?subject=' + encodeURIComponent(params.subject) + '&body=' + body;
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    btn.disabled = false;
+    return;
+  }
 
   emailjs.send('service_1hxa10f', 'template_iriub3k', params)
     .then(() => {
@@ -235,7 +285,7 @@ function executeTerminalCommand(command) {
     document.getElementById('certifications').scrollIntoView({ behavior: 'smooth' });
   }
   if (command === 'resume') {
-    window.open('resume_gaurav_kashikar_devops_engineer.pdf', '_blank');
+    window.open('Gaurav_Kashikar_DevOps_Resume.pdf', '_blank');
   }
 }
 

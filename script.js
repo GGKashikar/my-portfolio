@@ -159,54 +159,47 @@ document.querySelectorAll('.timeline-card, .project-card, .cert-card, .edu-card,
 // ── BACK TO TOP ──
 document.getElementById('back-to-top').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
 
-// ── CONTACT FORM (EmailJS) ──
-// To activate real email delivery:
-// 1. Sign up free at https://www.emailjs.com
-// 2. Create a service (Gmail) → get Service ID
-// 3. Create a template with variables: {{from_name}}, {{from_email}}, {{subject}}, {{message}}
-//    Set "To Email" in template to: gauravkashikar25@gmail.com
-// 4. Get your Public Key from Account → API Keys
-// 5. Replace YOUR_PUBLIC_KEY in index.html, YOUR_SERVICE_ID and YOUR_TEMPLATE_ID below
-
-document.getElementById('contact-form').addEventListener('submit', function(e) {
+// ── CONTACT FORM (Web3Forms) ──
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
   e.preventDefault();
   const status = document.getElementById('form-status');
   const btn = this.querySelector('button[type="submit"]');
+
   btn.disabled = true;
-  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+  btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending…';
+  status.textContent = '';
 
-  const params = {
-    from_name:  document.getElementById('name').value,
-    from_email: document.getElementById('email').value,
-    subject:    document.getElementById('subject').value,
-    message:    document.getElementById('message').value,
-    to_email:   'gauravkashikar25@gmail.com'
-  };
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData.entries());
 
-  if (typeof emailjs === 'undefined' || !emailjs.send) {
-    const body = encodeURIComponent(params.message + '\n\nFrom: ' + params.from_name + ' <' + params.from_email + '>');
-    window.location.href = 'mailto:gauravkashikar25@gmail.com?subject=' + encodeURIComponent(params.subject) + '&body=' + body;
-    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-    btn.disabled = false;
-    return;
-  }
+  try {
+    const res = await fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(data)
+    });
 
-  emailjs.send('service_1hxa10f', 'template_iriub3k', params)
-    .then(() => {
-      status.textContent = '✅ Message sent! I\'ll get back to you soon.';
+    const json = await res.json();
+
+    if (res.ok && json.success) {
+      status.textContent = '✅ Message sent. I will reply soon.';
       status.style.color = '#34d399';
       this.reset();
-    })
-    .catch((err) => {
-      status.textContent = '❌ Failed to send. Please email me directly at gauravkashikar25@gmail.com';
-      status.style.color = '#f43f5e';
-      console.error('EmailJS error:', err);
-    })
-    .finally(() => {
-      btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
-      btn.disabled = false;
-      setTimeout(() => { status.textContent = ''; }, 5000);
-    });
+    } else {
+      throw new Error(json.message || 'Submission failed');
+    }
+  } catch (err) {
+    status.textContent = '❌ Could not send. Please email me directly at gauravkashikar25@gmail.com';
+    status.style.color = '#f43f5e';
+    console.error('Web3Forms error:', err);
+  } finally {
+    btn.innerHTML = '<i class="fas fa-paper-plane"></i> Send Message';
+    btn.disabled = false;
+    setTimeout(() => { status.textContent = ''; }, 6000);
+  }
 });
 
 // ── INTERACTIVE TERMINAL PROMPT ┎

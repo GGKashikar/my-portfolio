@@ -90,9 +90,7 @@
   </script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <!-- EmailJS for contact form delivery -->
-  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script>if (typeof emailjs !== 'undefined') emailjs.init('ke11rJ8c0PkKLfGh7');</script>
+  <!-- Web3Forms for contact form delivery -->
 </head>
 <body>
 
@@ -579,6 +577,9 @@
         </div>
 
         <form class="contact-form" id="contact-form">
+          <!-- Web3Forms -->
+          <input type="hidden" name="access_key" value="2997f2a0-fff3-4722-8cb5-7d9e3e79512d" />
+          <input type="checkbox" name="botcheck" style="display:none;" tabindex="-1" autocomplete="off" />
           <div class="form-group">
             <label for="name">Your Name</label>
             <input type="text" id="name" name="name" placeholder="Write your name here" required />

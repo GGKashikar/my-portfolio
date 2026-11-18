@@ -1,4 +1,4 @@
-﻿
+
 // ── DARK / LIGHT MODE TOGGLE ──
 const html = document.documentElement;
 const themeToggle = document.getElementById('theme-toggle');
@@ -77,8 +77,8 @@ navLinks.forEach(l => l.addEventListener('click', () => {
   navLinksContainer.classList.remove('open');
 }));
 
-// ── TYPED ROLE (IT Consultant first, then Cloud & DevOps Enthusiast) ──
-const roles = ['IT Consultant', 'Cloud & DevOps Enthusiast'];
+// ── TYPED ROLE (IT Consultant first, then others) ──
+const roles = ['IT Consultant', 'Tech Lead', 'Cloud & DevOps Enthusiast', 'AI & Emerging Technology Explorer'];
 let ri = 0, ci = 0, del = false;
 const typedEl = document.getElementById('typed-role');
 const prefixEl = document.querySelector('.role-prefix');
@@ -217,18 +217,22 @@ const terminalCommands = {
     'about          - Learn more about me',
     'experience     - Jump to the Experience section',
     'projects       - Jump to the Projects section',
+    'writing        - Jump to Writing & Insights',
     'education      - Jump to the Education section',
-    'certifications - Jump to the Certifications section',
+    'leadership     - Jump to Leadership & Professional Development',
+    'certifications - Jump to Technical Certifications',
     'contact        - Jump to the Contact section',
     'resume         - Open the resume PDF',
     'clear          - Clear this terminal'
   ],
   skills: ['AWS · Docker · Kubernetes · Terraform · Jenkins · Python · Linux'],
-  about: ['IT Consultant focused on Cloud, DevOps, and intelligent IT solutions in real-world IT projects.'],
+  about: ['IT Consultant and Tech Lead focused on Cloud, DevOps, AI and digital transformation.'],
   experience: ['Scrolls to the Experience section.'],
   projects: ['Scrolls to the Projects section.'],
+  writing: ['Opening Writing & Insights...'],
   education: ['Scrolls to the Education section.'],
-  certifications: ['Scrolls to the Certifications section.'],
+  leadership: ['Scrolls to Leadership & Professional Development.'],
+  certifications: ['Scrolls to the Technical Certifications section.'],
   contact: ['Opening contact section...', 'You can also email me at gauravkashikar25@gmail.com'],
   resume: ['Opening resume...']
 };
@@ -271,8 +275,14 @@ function executeTerminalCommand(command) {
   if (command === 'projects') {
     document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
   }
+  if (command === 'writing') {
+    document.getElementById('writing').scrollIntoView({ behavior: 'smooth' });
+  }
   if (command === 'education') {
     document.getElementById('education').scrollIntoView({ behavior: 'smooth' });
+  }
+  if (command === 'leadership') {
+    document.getElementById('leadership').scrollIntoView({ behavior: 'smooth' });
   }
   if (command === 'certifications') {
     document.getElementById('certifications').scrollIntoView({ behavior: 'smooth' });
